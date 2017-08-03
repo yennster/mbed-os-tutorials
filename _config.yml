@@ -18,7 +18,7 @@ email: jennifer.plunkett@arm.com
 description: > # this means to ignore newlines until "baseurl:"
   TBD
 url: http://yennster.github.io
-baseurl: /mbed-os-tutorials
+baseurl: /mbed-os-tutorials/
 
 # Build settings
 markdown: kramdown
@@ -27,7 +27,7 @@ plugins:
   #- jekyll-feed
 
 post_dirs: false
-permalink: :title/
+permalink: /:title/
 
 #gems:
  # - jekyll-optional-front-matter
