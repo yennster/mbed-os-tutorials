@@ -17,7 +17,7 @@
           <ul class="nav nav-pills flex-column">
             {% for post in site.posts %}
               <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>
+                <a class="nav-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
               </li>
             {% endfor %}
           </ul>
