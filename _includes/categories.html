@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column">
+        {% for category in site.categories %}
+          <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/{{ category | first }}">{{ category | first }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+    	<div class="p-3">
+			{% for post in site.categories[page.category] | sort: 'title' %}
+				<div id="{{ post.url }}" class="tutorial">
+					<h3 id="{{ post.title }}">{{ post.title }}</h3>
+					<hr>
+					{{ post.content }}
+					<div class="row justify-content-center" width="inherit" style="margin-top: 2rem">
+					{% if post.next %} 
+					  <div class="col-5">
+					    <a class="nav-link btn btn-secondary" href="{{ site.baseurl }}{{ post.next.url }}" id="{{ post.next.title | replace: " ", "-" }}">Previous: {{ post.next.title }}</a>
+					  </div>
+					{% endif %}
+					{% if post.previous %}
+					  <div class="col-5">
+					    <a class="nav-link btn btn-primary" href="{{ site.baseurl }}{{ post.previous.url }}" id="{{ post.previous.title | replace: " ", "-" }}">Next: {{ post.previous.title }}</a>
+					  </div>
+					{% endif %}
+					</div>
+			  	</div>
+			{% endfor %}
+		</div>
+    </main>
+
+  </div>
+</div>

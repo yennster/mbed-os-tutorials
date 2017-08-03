@@ -1,59 +1,17 @@
 <html>
   <head>
-    <title>{{ site.title }}</title>
-    <meta charset="utf-8">
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
-    <script src="{{ site.baseurl }}/js/custom.js"></script>
+
+    {% include head.html %}
+
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary fixed-top">
-      <a class="navbar-brand" href="{{ site.baseurl }}/">mbed OS Tutorial: x API</a>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-          <ul class="nav nav-pills flex-column">
-            {% for post in site.posts %}
-              <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/#{{ post.url | remove_first:'/'}}" id="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
 
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-          
-          <div class="p-3">
-            {% for post in site.posts %}
-              <div id="{{ post.url | remove_first: '/' }}" class="tutorial collapse">
-                <h3 id="{{ post.title }}">{{ post.title }}</h3>
-                <hr>
-                {{ post.content }}
+    {% include header.html %}
 
-                <div class="row justify-content-center" width="inherit" style="margin-top: 2rem">
-                  {% if post.next %} 
-                    <div class="col-3">
-                      <a class="nav-link btn btn-secondary" href="{{ site.baseurl }}/#{{ post.next.url | remove_first: '/' }}" id="{{ post.next.url | remove_first: '/' }}">Previous: {{ post.next.title }}</a>
-                    </div>
-                  {% endif %}
-                  {% if post.previous %}
-                    <div class="col-3">
-                      <a class="nav-link btn btn-primary" href="{{ site.baseurl }}/#{{ post.previous.url | remove_first: '/' }}" id="{{ post.previous.url | remove_first: '/' }}">Next: {{ post.previous.title }}</a>
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
-            {% endfor %}  
-          </div>
+        {{ content }}
 
-        </main>
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    {% include footer.html %}
 
   </body>
 </html>

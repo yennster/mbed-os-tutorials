@@ -1,1 +1,16 @@
-header.html
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary fixed-top">
+    <button class="navbar-toggler navbar-toggler-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <a class="navbar-brand" href="{{ site.baseurl }}/">mbed OS Tutorial: x API</a>
+</nav>
+
+<div class="collapse navbar-collapse bg-faded" id="mobileNav">
+  <ul class="navbar-nav nav-pills mr-auto">
+    {% for post in site.posts %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.baseurl }}/#{{ post.url | remove_first:'/'}}" id="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

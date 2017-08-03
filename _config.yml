@@ -25,7 +25,7 @@ markdown: kramdown
 # theme: minima
 
 post_dirs: false
-permalink: :title
+permalink: /api/:categories/:title
 
 
 #gems:
