@@ -1,0 +1,9 @@
+<div class="p-3">
+	{% for post in site.posts %}
+		<div id="{{ post.title }}" style="display:none;">
+			<h3 id="{{ post.title">{{ post.title }}</h3>
+			<hr>
+			<div>{{ post.content }}</div>
+		</div>
+	{% endfor %}	
+</div>

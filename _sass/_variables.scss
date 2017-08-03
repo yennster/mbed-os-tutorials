@@ -94,14 +94,14 @@
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
 $black:  #000 !default;
-$red:    #d9534f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
-$teal:   #5bc0de !default;
+$red:    #FF3C52 !default; //#d9534f !default;
+$orange: #F59619 !default; //#f0ad4e !default;
+$yellow: #F9BD31 !default; //#ffd500 !default;
+$green:  #00C473 !default; //#5cb85c !default;
+$blue:   #1496B4 !default; //#0275d8 !default; 
+$teal:   #00C3DC !default; //#5bc0de !default;
 $pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+$purple: #8A6EAF !default; //#613d7c !default;
 
 // Create grayscale
 $gray-dark:                 #292b2c !default;
@@ -116,7 +116,7 @@ $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
-$brand-inverse:             $gray-dark !default;
+$brand-inverse:             #00C3DC !default; //$blue !default; //$gray-dark !default;
 
 
 // Options
@@ -323,7 +323,7 @@ $border-radius-lg:       .3rem !default;
 $border-radius-sm:       .2rem !default;
 
 $component-active-color: $white !default;
-$component-active-bg:    $brand-primary !default;
+$component-active-bg:    $orange !default; //#128cab !default; //#0078a0 !default; //$brand-primary !default;
 
 $caret-width:            .3em !default;
 

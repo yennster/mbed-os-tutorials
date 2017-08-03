@@ -5,18 +5,14 @@
 @import "bootstrap";
 @import "bootstrap-grid";
 
-/*
- * Base structure
- */
-
-/* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
+  font-family: "Open Sans", -apple-system, system-ui, "Segoe UI" !important;
 }
 
-/*
- * Typography
- */
+.navbar {
+	border-bottom: 5px solid $teal !important;
+}
 
 h1 {
   margin-bottom: 20px;
@@ -24,13 +20,9 @@ h1 {
   border-bottom: 1px solid #eee;
 }
 
-/*
- * Sidebar
- */
-
 .sidebar {
   position: fixed;
-  top: 51px;
+  top: 57px;
   bottom: 0;
   left: 0;
   z-index: 1000;
@@ -40,7 +32,6 @@ h1 {
   border-right: 1px solid #eee;
 }
 
-/* Sidebar navigation */
 .sidebar {
   padding-left: 0;
   padding-right: 0;
@@ -60,4 +51,19 @@ h1 {
 
 .sidebar .nav-link {
   border-radius: 0;
+}
+
+.button-nav {
+  position: fixed;
+  bottom: 1.9375rem;
+}
+
+.btn-purple {
+  color: white;
+  background-color: $purple;
+  border: $purple;
+}
+
+.btn {
+  white-space: normal;
 }

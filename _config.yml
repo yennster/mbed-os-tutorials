@@ -23,11 +23,10 @@ baseurl: /mbed-os-tutorials
 # Build settings
 markdown: kramdown
 # theme: minima
-plugins:
-  #- jekyll-feed
 
 post_dirs: false
-permalink: :title/
+permalink: :title
+
 
 #gems:
  # - jekyll-optional-front-matter
