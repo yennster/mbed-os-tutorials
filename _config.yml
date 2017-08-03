@@ -27,7 +27,7 @@ plugins:
   #- jekyll-feed
 
 post_dirs: false
-permalink: /:title
+permalink: :title/
 
 #gems:
  # - jekyll-optional-front-matter
