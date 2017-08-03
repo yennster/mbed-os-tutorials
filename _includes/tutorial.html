@@ -1,9 +1,22 @@
-<div class="p-3">
-	{% for post in site.posts %}
-		<div id="{{ post.title }}" style="display:none;">
-			<h3 id="{{ post.title">{{ post.title }}</h3>
-			<hr>
-			<div>{{ post.content }}</div>
-		</div>
-	{% endfor %}	
-</div>
+          <div class="p-3">
+            {% for post in site.posts %}
+              <div id="{{ post.title | replace: " ", "-" }}" class="tutorial collapse">
+                <h3 id="{{ post.title }}">{{ post.title }}</h3>
+                <hr>
+                {{ post.content }}
+
+                <div class="row justify-content-center" width="inherit" style="margin-top: 2rem">
+                  {% if post.next %} 
+                    <div class="col-4">
+                      <a class="nav-link btn btn-secondary" href="{{ site.baseurl }}/{{ post.next.url | remove_first: '/' }}" id="{{ post.next.title | replace: " ", "-" }}">Previous: {{ post.next.title }}</a>
+                    </div>
+                  {% endif %}
+                  {% if post.previous %}
+                    <div class="col-4">
+                      <a class="nav-link btn btn-primary" href="{{ site.baseurl }}/{{ post.previous.url | remove_first: '/' }}" id="{{ post.previous.title | replace: " ", "-" }}">Next: {{ post.previous.title }}</a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}  
+          </div>
