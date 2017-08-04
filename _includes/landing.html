@@ -4,8 +4,6 @@
     	<div class="p-3">
         <div class="row">
 
-          <h1>Task Management APIs</h1>
-
           {% assign sorted_categories = site.categories | sort {|left, right| left[0] <=> right[0]} %}
           {% for category in sorted_categories %}
             {% if category[0] != "api" %}
