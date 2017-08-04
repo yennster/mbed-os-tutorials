@@ -9,16 +9,13 @@
           {% assign sorted_categories = site.categories | sort {|left, right| left[0] <=> right[0]} %}
           {% for category in sorted_categories %}
             {% if category[0] != "api" %}
-              {% assign TaskManagment = "AnalogIn,AnalogOut,DigitalIn" %}
-              {% if TaskManagement contains category[0] %}
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <div class="card card-outline-primary text-center" id="{{ category[0] }}" onclick="location.href='{{ site.baseurl }}/api/{{ category[0] }}';">
-                    <div class="card-block">
-                      <h4 class="card-title text-primary" style="margin:0">{{ category[0] }}</h4>
-                    </div>
-                  </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="card card-outline-primary text-center" id="{{ category[0] }}" onclick="location.href='{{ site.baseurl }}/api/{{ category[0] }}';">
+                <div class="card-block">
+                  <h4 class="card-title text-primary" style="margin:0">{{ category[0] }}</h4>
                 </div>
-              {% endif %}
+              </div>
+            </div>
             {% endif %}
           {% endfor %}
 
