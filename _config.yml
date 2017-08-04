@@ -25,8 +25,7 @@ markdown: kramdown
 # theme: minima
 
 post_dirs: false
-permalink: /api/:categories/:title
-
+permalink: /:categories/:title/
 
 #gems:
  # - jekyll-optional-front-matter

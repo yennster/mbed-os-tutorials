@@ -1,5 +1,56 @@
 ---
-layout: default
+layout: api-default
 ---
 
-{{ content }}
+<div class="container-fluid">
+  <div class="row">
+
+    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column">
+      	{% assign sorted_posts = site.categories[page.category] | sort {|left, right| left[0] <=> right[0]} %}
+        {% for post in sorted_posts %}
+          <li class="nav-item"><span class="nav-link" id="{{ post.title | replace: " ", "-" }}">{{ post.title }}</span></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+    	<div class="p-3">
+      	{% assign sorted_posts = site.categories[page.category] | sort {|left, right| left[0] <=> right[0]} %}
+  			{% for post in sorted_posts %}
+  				<div id="{{ post.title | replace: " ", "-" }}" class="tutorial collapse">
+  					<h3 id="{{ post.title }}" class="tutorial-title">{{ post.title }}</h3>
+  					{{ post.content }}
+  					</div>
+  			{% endfor %}
+		  </div>
+    </main>
+
+  </div>
+</div>
+
+<!--
+<ul class="pager"> {% assign prev = "" %}
+{% assign next = "" %}
+{% assign stop = false %}
+{% for post in site.posts%}
+{% if post == page %}
+{% assign stop = true %}
+{% elsif post.categories == page.categories %}
+{% if stop %}
+{% assign prev = post.url %}
+{% assign pTitle = post.title %}
+{% break %}
+{% else %}
+{% assign next = post.url %}
+{% assign nTitle = post.title %}
+{% endif %}
+{% endif %}
+{% endfor%}
+{% if prev != "" %}
+<li class="previous"><a href="{{ prev }}">← Previous Page - {{pTitle}}</a></li>
+{% endif %}
+{% if next != "" %}
+<li class="next"><a href="{{ next }}"> Next Page - {{nTitle}} →</a></li>
+{% endif %}
+</ul> -->
