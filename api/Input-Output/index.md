@@ -1,4 +1,4 @@
 ---
 layout: category
-category: "Input Output"
+category: Input-Output
 ---

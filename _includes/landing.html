@@ -6,11 +6,12 @@
         <div class="row">
           {% assign sorted_categories = site.categories | sort {|left, right| left[0] <=> right[0]} %}
           {% for category in sorted_categories %}
-            {% if category[0] != "api" %}
+            {% assign cat = category[0] | replace: "-"," " %}
+            {% if cat != "api" %}
             <div class="col col-sm-6 col-xs-12">
               <div class="card card-outline-primary text-center" id="{{ category[0] }}" onclick="location.href='{{ site.baseurl }}/api/{{ category[0] }}';">
                 <div class="card-block">
-                  <h4 class="card-title text-primary" style="margin:0">{{ category[0] }}</h4>
+                  <h4 class="card-title text-primary" style="margin:0">{{ cat }}</h4>
                 </div>
               </div>
             </div>
