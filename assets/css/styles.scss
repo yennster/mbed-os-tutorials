@@ -121,12 +121,14 @@ pre {
   border-radius: 6px;
 }
 
-.navbar-brand > a {
-  display: inline-block;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: inherit;
-  color: $white;
-  white-space: nowrap;
-  text-decoration: none;
+span.navbar-brand {
+  > a {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    color: $white;
+    white-space: nowrap;
+    text-decoration: none;
+  }
 }
