@@ -18,39 +18,43 @@ layout: api-default
     	<div class="p-3">
       	{% assign sorted_posts = site.categories[page.category] | sort {|left, right| left[0] <=> right[0]} %}
   			{% for post in sorted_posts %}
+          {% assign current_post = post.title %}
   				<div id="{{ post.title | replace: " ", "-" }}" class="tutorial collapse">
   					<h3 id="{{ post.title }}" class="tutorial-title">{{ post.title }}</h3>
   					{{ post.content }}
-  					</div>
-  			{% endfor %}
+            {% assign prev = "" %}
+            {% assign next = "" %}
+            {% assign stop = false %}
+            {% for post2 in sorted_posts %}
+              {% if post2.title == current_post %}
+                {% assign stop = true %}
+              {% else %}
+                {% if stop %}
+                  {% assign prev = post2.url %}
+                  {% assign pTitle = post2.title %}
+                {% break %}
+                {% else %}
+                  {% assign next = post2.url %}
+                  {% assign nTitle = post2.title %}
+                {% endif %}
+              {% endif %}
+            {% endfor%}
+            <div class="row justify-content-center" style="margin-top: 2rem;">
+              {% if next != "" %}
+              <div class="col-5">
+                <a class="nav-link btn btn-outline-secondary text-secondary" id="{{ nTitle | replace: " ", "-" }}">Previous: {{ nTitle }}</a>
+              </div>
+              {% endif %}
+              {% if prev != "" %}
+              <div class="col-5">
+                <a class="nav-link btn btn-primary text-white" id="{{ pTitle | replace: " ", "-" }}">Next: {{ pTitle }}</a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
 		  </div>
     </main>
 
   </div>
 </div>
-
-<!--
-<ul class="pager"> {% assign prev = "" %}
-{% assign next = "" %}
-{% assign stop = false %}
-{% for post in site.posts%}
-{% if post == page %}
-{% assign stop = true %}
-{% elsif post.categories == page.categories %}
-{% if stop %}
-{% assign prev = post.url %}
-{% assign pTitle = post.title %}
-{% break %}
-{% else %}
-{% assign next = post.url %}
-{% assign nTitle = post.title %}
-{% endif %}
-{% endif %}
-{% endfor%}
-{% if prev != "" %}
-<li class="previous"><a href="{{ prev }}">← Previous Page - {{pTitle}}</a></li>
-{% endif %}
-{% if next != "" %}
-<li class="next"><a href="{{ next }}"> Next Page - {{nTitle}} →</a></li>
-{% endif %}
-</ul> -->

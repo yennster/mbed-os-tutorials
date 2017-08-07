@@ -22,6 +22,12 @@ h1 {
 }
 
 .tutorial-title {
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eee;
+}
+
+.landing-title {
   padding-bottom: 9px;
   border-bottom: 1px solid #eee;
 }
@@ -71,8 +77,8 @@ h1 {
   border: $purple;
 }
 
-.btn {
-  white-space: normal;
+a.btn {
+  white-space: normal !important;
 }
 
 #mobileNav .nav-link {
@@ -106,4 +112,13 @@ a.navbar-text {
   .card-title {
     color: $white !important;
   }
+}
+
+pre {
+  padding: 1.25rem;
+  overflow: auto;
+  word-wrap: normal;
+  background-color: $gray-lightest;
+  border: 1px solid #eee;
+  border-radius: 6px;
 }

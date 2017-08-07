@@ -15,8 +15,6 @@ $(function() {
 		$(".nav-link").removeClass('active');
 		$("#" + ID + ".nav-link").addClass('active');
 
-		
-
 		$("div.tutorial").siblings().collapse('hide');
 		$("div#" + ID).collapse('show');
 	});
