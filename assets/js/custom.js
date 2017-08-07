@@ -5,7 +5,7 @@ $(function() {
 	}
 
 	if($("#category").html() != (null || undefined)) {
-		document.title = $("#category").html() + " · mbed OS Tutorials";
+		document.title = $("#category").html() + " · mbed OS API Tutorials";
 	}
 	
 

@@ -1,4 +1,4 @@
 ---
 layout: category
-category: DigitalOut
+category: "Input Output"
 ---
