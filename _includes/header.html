@@ -1,3 +1,19 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary fixed-top">
-	<a class="navbar-brand" href="{{ site.baseurl }}/api/">mbed OS API Tutorials</a>
+	<span class="navbar-brand"><a href="{{ site.baseurl }}/api/"><i class="fa fa-home"></i></a><a href="{{ site.baseurl }}/api/">mbed OS API Tutorials</a></span>
+	<ul class="navbar-nav ml-auto">
+		<li class="nav-item dropdown hidden-sm-down">
+			<a class="nav-link dropdown-toggle" id="tutorial-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				API Tutorials
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="tutorial-dropdown">
+				{% assign sorted_categories = site.categories | sort {|left, right| left[0] <=> right[0]} %}
+				{% for category in sorted_categories %}
+					{% assign cat = category[0] | replace: "-",", " %}
+					{% if cat != "api" %}
+						<a class="dropdown-item" id="{{ category[0] }}" onclick="location.href='{{ site.baseurl }}/api/{{ category[0] }}';">{{ cat }}</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</li>
+	</ul>
 </nav>

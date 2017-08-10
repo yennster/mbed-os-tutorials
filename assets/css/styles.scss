@@ -75,9 +75,7 @@ h1 {
   border: $purple;
 }
 
-a.btn {
-  white-space: normal !important;
-}
+
 
 #mobileNav .nav-link {
   display: block;
@@ -93,6 +91,10 @@ a.btn {
 }
 
 .nav-link {
+  cursor: pointer;
+}
+
+.dropdown-item {
   cursor: pointer;
 }
 
