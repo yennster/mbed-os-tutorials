@@ -1,18 +1,18 @@
 $(function() {
 
 	if (window.location.pathname=="/mbed-os-tutorials/" ) {
-		window.location.href = '/mbed-os-tutorials/api'; 
+		window.location.href = '/mbed-os-tutorials/api';
 	}
 
 	if($("#category").html() != (null || undefined)) {
 		document.title = $("#category").html() + " · mbed OS API Tutorials";
 	}
-	
 
-	$('.nav-link').bind('click', function() {
+
+	$('.steps').bind('click', function() {
 		var ID = $(this).attr('id');
 		console.log(ID);
-		$(".nav-link").removeClass('active');
+		$(".steps").removeClass('active');
 		$("#" + ID + ".nav-link").addClass('active');
 
 		$("div.tutorial").siblings().collapse('hide');

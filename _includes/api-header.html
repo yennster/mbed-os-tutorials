@@ -28,7 +28,7 @@
     {% assign sorted_posts = site.categories[page.category] | sort {|left, right| left[0] <=> right[0]} %}
     {% for post in sorted_posts %}
       {% assign title = post.title | replace: "-",", " %}
-      <li class="nav-item"><span class="nav-link" id="{{ post.title | replace: " ", "-" }}">{{ title }}</span></li>
+      <li class="nav-item"><span class="nav-link steps" id="{{ post.title | replace: " ", "-" }}">{{ title }}</span></li>
     {% endfor %}
   </ul>
 </div>

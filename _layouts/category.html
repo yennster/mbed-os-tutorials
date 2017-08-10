@@ -9,7 +9,7 @@ layout: api-default
       <ul class="nav nav-pills flex-column">
       	{% assign sorted_posts = site.categories[page.category] | sort {|left, right| left[0] <=> right[0]} %}
         {% for post in sorted_posts %}
-          <li class="nav-item"><span class="nav-link" id="{{ post.title | replace: " ", "-" }}">{{ post.title }}</span></li>
+          <li class="nav-item"><span class="nav-link steps" id="{{ post.title | replace: " ", "-" }}">{{ post.title }}</span></li>
         {% endfor %}
       </ul>
     </nav>
@@ -42,12 +42,12 @@ layout: api-default
             <div class="row justify-content-center" style="margin-top: 2rem;">
               {% if next != "" %}
               <div class="col-5">
-                <a class="nav-link btn btn-outline-secondary text-secondary" id="{{ nTitle | replace: " ", "-" }}">Previous: {{ nTitle }}</a>
+                <a class="nav-link steps btn btn-outline-secondary text-secondary" id="{{ nTitle | replace: " ", "-" }}">Previous: {{ nTitle }}</a>
               </div>
               {% endif %}
               {% if prev != "" %}
               <div class="col-5">
-                <a class="nav-link btn btn-primary text-white" id="{{ pTitle | replace: " ", "-" }}">Next: {{ pTitle }}</a>
+                <a class="nav-link steps btn btn-primary text-white" id="{{ pTitle | replace: " ", "-" }}">Next: {{ pTitle }}</a>
               </div>
               {% endif %}
             </div>
